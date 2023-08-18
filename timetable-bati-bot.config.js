@@ -1,8 +1,8 @@
 module.exports = {
   apps: [
     {
-      name: "advoshyi-tools",
-      cwd: "/home/ubuntu/pm/advoshyi-tools",
+      name: "timetable-bati-bot",
+      cwd: "/home/ubuntu/pm/timetable-bati-bot",
       script: "index.js",
       watch: true,
       watch_delay: 5000,
