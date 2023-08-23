@@ -9,7 +9,7 @@ datasource db {
 
 model Users {
   id            Int      @id @default(autoincrement())
-  tg_id         Int      @unique
+  tg_id         BigInt   @unique
   tg_username   String?
   tg_first_name String?
   tg_last_name  String?
