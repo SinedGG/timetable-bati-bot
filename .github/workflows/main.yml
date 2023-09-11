@@ -5,7 +5,7 @@ on: workflow_dispatch
 env:
   SERVER_HOST: ${{ secrets.SERVER_IP }}
   SERVER_USER: ubuntu
-  SERVER_PATH: /home/ubuntu/pm/timetable-bati-bot
+  SERVER_PATH: /home/ubuntu/pm/bati-bot
 
   CONFIG_LOCATION: /home/ubuntu/config/bati-bot.config.js
 
