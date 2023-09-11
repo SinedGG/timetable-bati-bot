@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "bati-bot",
-      cwd: "/home/ubuntu/pm/timetable-bati-bot",
+      cwd: "/home/ubuntu/pm/bati-bot",
       script: "index.js",
       log_date_format: "YYYY-MM-DD HH:mm Z",
 
