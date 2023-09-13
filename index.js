@@ -27,9 +27,10 @@ async function main() {
       vars.set("last-day", day);
       vars.set("file-size", newFile.value);
       for (let i = 0; i < users.length; i++) {
+        console.log(`Спроба надсилання для ${users[i].tg_id}`);
         await bot.telegram
           .sendDocument(
-            users[i].tg_id,
+            users[i].tg_id.toString(),
             { source: "./temp/zm.pdf" },
             { caption: text }
           )
@@ -39,16 +40,18 @@ async function main() {
                 "403: Forbidden: bot was blocked by the user"
               )
             ) {
-              user.delete(users[i].tg_id);
+              user.delete(users[i].tg_id.toString());
               console.log(
                 `[DB] Користувача ${users[i].tg_id} видалено з бази даних у зв'язку з блокуванням.`
               );
-            }
-            if (err.message.includes("429: Too Many Requests: retry after")) {
+            } else if (
+              err.message.includes("429: Too Many Requests: retry after")
+            ) {
               console.log("Too Many Requests");
+            } else {
+              console.log(err);
             }
           });
-        console.log(`Надсилання для ${users[i].tg_id} успішне.`);
       }
     }
     setTimeout(() => {
